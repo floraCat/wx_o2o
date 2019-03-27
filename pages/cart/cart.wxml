@@ -1,0 +1,129 @@
+<view class="xmContainer">
+	<view class="xmCart">
+
+		<!--头部-->
+		<view class="xmHead">
+			<navigator open-type="navigateBack" class="lt icon0 i-return">
+				<image src="/images/return.png"></image>
+			</navigator>
+			<view class="h2">{{pageTitle}}</view>
+			<view class="rt icon0 i-home" bindtap="goHome">
+				<image src="/images/home.png"></image>
+			</view>
+		</view>
+
+		<!--购物列表-->
+		<view class="cartOrder">
+	      <!-- empty -->
+	      <view class="xmEmpty" hidden="{{flag}}">
+	        <view class="i icon0 i-empty">
+	        	<image src="/images/empty.png"></image>
+	        </view>        
+	          <view class="p">这啥也没有</view>
+	          <view class="p">要么还是<view class="link" bindtap="goHome">再去逛逛</view></view>
+	        
+      	  </view>
+	      <!-- not empty -->
+	      <view class="notEmpty" hidden="{{!flag}}">
+	        <view class="cartList">
+	          <view class="item0" wx:for="{{orderLists}}" wx:key="index">
+	            <view class="ttl0">
+	              <!-- on -->
+	              <view class="icon2" data-opt="{{index}}" bindtap="checkShop">
+	                <view class="i icon0 i-select" hidden="{{flagShops[index]}}">
+	                	<image src="/images/select.png"></image>
+	                </view>
+	                <view class="i icon0 i-selected" hidden="{{!flagShops[index]}}">
+	                	<image src="/images/selected.png"></image>
+	                </view>
+	              </view>
+	              <view class="txt0">{{item.shopName}}</view>
+	              <view class="edit0" data-opt="{{index}}" bindtap="delShop">
+	                <view class="span">清空</view>
+	              </view>
+	            </view>
+	            <ul class="goods">
+	              <view class="item" wx:for="{{item.goodsList}}" wx:key="i" wx:for-item="goods" wx:for-index="i">
+	                <view class="icon" data-opt="{{index}},{{i}}" bindtap="checkGood">
+	                  <view class="i icon0 i-select" hidden="{{flagGoods[index][i]}}">
+	                  	<image src="/images/select.png"></image>
+	                  </view>
+	                  <view class="i icon0 i-selected" hidden="{{!flagGoods[index][i]}}">
+	                  	<image src="/images/selected.png"></image>
+	                  </view>
+	                </view>
+	                <view class="main">
+	                    <view class="content" :class="{{goods.delOpen ? 'swipeleft' : ''}}">
+	                        <view bindtap="goDetail" data-opt="{{goods.prodId}}" class="ttl">{{ goods.goodsName }}</view>
+	                        <view class="price">
+	                          <view class="span">¥<view class="em">{{ goods.goodsPrice }}</view></view>
+	                        </view>
+	                        <!--数量操作-->
+	                        <view class="handle">
+						        <view class="numHandle">
+						          <view class="i _sub icon0 i-reduce" data-opt="{{goods.goodsNumber}},{{index}},{{i}}" bindtap="subNum">
+						          	<image src="/images/reduce.png"></image>
+						          </view> 
+						          <view class="num">{{goods.goodsNumber}}</view> 
+						          <view class="i _add icon0 i-add" ref="addCartBtn" data-opt="{{goods.goodsNumber}},{{index}},{{i}}" bindtap="addNum">
+						          	<image src="/images/add.png"></image>
+						          </view>
+						        </view>
+						    </view>
+	                        <view class="del" data-opt="{{index}},{{i}}" bindtap="delGood"><view class="span">删除</view></view>
+	                    </view>
+		                <!-- <transition name="fade" enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight">
+		                </transition> -->
+	                </view>
+	              </view>
+	            </ul>
+	            <view class="foot">
+	              <view class="p">
+	                <view class="em">￥<view class="b">{{item.totalPrice}}</view></view>
+	              </view>
+	              <view class="p2">
+	                <view class="span">配送费</view>
+	                <view class="s2">0元</view>
+	              </view>
+	            </view>
+	          </view>
+	        </view>
+	      </view>
+
+	      <!--底部购物车-->
+	    <view class="footBanner">
+	      <view class="_wrap">
+	        <view class="lt">
+	          	<view class="_sel {{allSelect ? 'on' : ''}}" bindtap="checkAll">
+	          		<div class="all">
+		              <view class="i icon0 i-select" hidden="{{allSelect}}">
+		              	<image src="/images/select.png"></image>
+		              </view>
+		              <view class="i icon0 i-selected" hidden="{{!allSelect}}">
+		              	<image src="/images/selected.png"></image>
+		              </view>
+	              	</div>
+	              <view class="span">全选</view>
+	            </view>
+	            <view class="_sum">
+	              <view class="label">合计：</view><view class="span">¥</view><view class="em">{{ totalPrice }}</view>
+	            </view>
+	        </view>
+	        <view class="rt {{totalNumber > 0 ? 'on' : ''}}" bindtap="settlement">去结算</view>
+	      </view>
+	    </view>
+	    <!--飞入购物车-->
+	    <view id="flyItem" class="fly_item"></view>
+
+    	</view>
+
+    	<!--开启充电弹窗 start-->
+	    <include src="../components/checkCharge/checkCharge.wxml" />
+	    <!--开启充电弹窗 end-->
+
+	    <!--扫一扫弹窗 start-->
+	    <include src="../components/popSao/popSao.wxml" />
+	    <!--扫一扫弹窗 end-->
+
+	</view>
+</view>

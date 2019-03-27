@@ -1,0 +1,107 @@
+@import "/style/common.wxss";
+@import "/style/order.wxss";
+
+
+.xmOrders {
+	min-height: 960rpx;
+}
+.xmOrders .handles {
+	width: 60%;
+	margin: 0 auto 288rpx;		
+}
+.xmOrders .copyright {
+	position: absolute;
+}
+.xmOrders .head {
+	display: block;
+	height: 90rpx;
+	overflow: hidden;
+	border-bottom: #ddd 2rpx solid;
+}
+.xmOrders .head .h3 {
+	float: left;
+	color: #333;
+	font-size: 30rpx;
+	font-weight: bold;
+	line-height: 90rpx;
+}
+
+
+
+/*订单各列表入口*/
+.orderCats {
+	background: #fff;
+	padding: 10rpx 32rpx 0;
+	margin-bottom: 20rpx;
+	border-bottom: #E1E1E1 2rpx solid;
+}
+.orderCats .ul {
+	display: flex;
+	padding: 28rpx 0;
+}
+.orderCats .li {
+	flex: 1;
+}
+.orderCats .link {
+	display: relative;
+	display: block;
+	width: 128rpx;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 57rpx;
+}
+.orderCats .link .i {
+	position: relative;
+	font-size: 51rpx;
+	line-height: 84rpx;
+	height: 84rpx;
+}
+
+
+
+/*最近订单*/
+.orderLast {
+	padding-bottom: 60rpx;
+}
+.orderLast .item:first-child {
+	border-top: none;
+}
+.orderLast .head {
+	padding: 0 40rpx;
+}
+.orderLast .head .span {
+	float: right;
+	color: #888;
+	font-size: 9.6rpx;
+}
+.orderLast .head .i {
+	font-size: 10.8rpx;
+	margin-left: 4.8rpx;
+	color: #bbb;
+}
+.orderLast .item {
+	border-top: #E1E1E1 2rpx solid;
+	border-bottom: #E1E1E1 2rpx solid;
+	margin-bottom: 16rpx;
+	background: #fff;
+}
+.orderLast .note {
+	position: relative;
+	display: block;
+	width: 210rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	margin: 0 auto;
+}
+.orderLast .note .icon0 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 34rpx;
+	height: 100rpx;
+}
+
+.noOrder {
+	text-align: center;
+	line-height: 100rpx;
+}

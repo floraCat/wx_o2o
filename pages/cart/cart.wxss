@@ -1,0 +1,196 @@
+@import "/style/common.wxss";
+@import "/style/cart.wxss";
+@import "/style/pop.wxss";
+
+.xmCart {
+	min-height: 100%;
+	padding-bottom: 110rpx;
+	width: 750rpx;
+	overflow-x: hidden;
+}
+
+
+.cartOrder .notEmpty {
+	padding-top: 20rpx;
+}
+.cartList .item0 {
+	margin-bottom: 20rpx;
+	background: #fff;
+	border-top: #E1E1E1 2rpx solid;
+	border-bottom: #E1E1E1 2rpx solid;
+}
+.cartList .ttl0 {
+	position: relative;
+	height: 100rpx;
+	line-height: 100rpx;
+}
+.cartList .ttl0 .icon0 {
+	float: left;
+	position: relative;
+	width: 80rpx;
+	height: 100rpx;
+}
+.cartList .icon1 {
+	float: left;
+	height: 100rpx;
+	width: 80rpx;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+}
+.cartList .icon1.on .i {
+	font-size: 41rpx;
+}
+.cartList .icon1 .i {
+	color: #44A0FF;
+	font-size: 41rpx;
+}
+.cartList .txt0 {
+	line-height: 100rpx;
+	padding: 0 120rpx 0 80rpx;
+}
+.cartList .edit0 {
+	position: absolute;
+	top: 0;
+	right: 40rpx;
+	text-align: center;
+	color: #999;
+	font-size: 28rpx;
+	cursor: pointer;
+}
+.cartList .edit0 .span{
+	line-height: 100rpx;
+}
+.cartList .goods .item {
+	position: relative;
+	width:120%;
+	overflow: hidden;
+	transition:all 0.3s linear;
+	-webkit-transition:all 0.3s linear;
+}
+.cartList .goods .item.swipeleft{
+	transform:translateX(-150rpx);
+	-webkit-transform:translateX(-150rpx);
+}
+.cartList .goods .icon {
+	position: relative;
+	width: 80rpx;
+	height: 100rpx;
+	float: left;
+	cursor: pointer;
+	text-align: center;
+}
+.cartList .goods .icon.on .i {
+	font-size: 41rpx;
+}
+.cartList .goods .icon .i {
+	font-size: 41rpx;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #44A0FF;
+	width: 100%;
+	height: 100%;
+}
+.cartList .goods .main {
+	float: left;
+	width: 820rpx;
+}
+.cartList .goods .content {
+	position: relative;
+	line-height: 100rpx;
+	overflow: hidden;
+}
+.cartList .goods .del {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 120rpx;
+	background: #fb4f45;
+	color: #fff;
+	text-align: center;
+}
+.cartList .goods .del.swipeleft{
+	transform:translateX(-150rpx);
+	-webkit-transform:translateX(-150rpx);
+}
+
+.cartList .goods .ttl {
+	float: left;
+	width: 360rpx;
+	line-height: 100rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.cartList .goods .ttl .link {
+    float: left;
+    font-size: 28rpx;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+}
+.cartList .goods .spec {
+	line-height: 40rpx;
+	font-size: 24rpx;
+	color: #999;
+}
+.cartList .goods .spec .span {
+	margin-right: 20rpx;
+}
+.cartList .goods .price {
+	float: left;
+}
+.cartList .goods .price .span {
+	display: inline;
+	color: #000;
+	font-size: 36rpx;
+	line-height: 100rpx;
+}
+.cartList .goods .price .em {
+	display: inline;
+	font-size: 32rpx;
+	line-height: 100rpx;
+}
+.cartList .goods .handle {
+	 float: left;
+	 margin-top: 30rpx;
+	 padding-left: 50rpx;
+}
+
+.cartList .foot {
+	height: 100rpx;
+	line-height: 100rpx;
+	padding:0 32rpx;
+	overflow:hidden;
+}
+.cartList .foot .p {
+	float: right;
+	color: #333;
+	font-size: 32rpx;
+	margin-left: 40rpx;
+	line-height: 100rpx;
+}
+.cartList .foot .p2 {
+	float: right;
+	font-size: 24rpx;
+	line-height: 100rpx;
+}
+.cartList .foot .p2 .span {
+	display: inline;
+}
+.cartList .foot .s2 {
+	display: inline;
+	color: #44A0FF;
+}
+.cartList .foot .em {
+	display: inline;
+	color: #44A0FF;
+}
+.cartList .foot .b {
+	display: inline;
+	font-size: 40rpx;
+	font-weight: normal;
+	color: #44A0FF;
+}

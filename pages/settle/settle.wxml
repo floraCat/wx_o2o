@@ -1,0 +1,116 @@
+<view class="xmContainer">
+	<view class="xmSettle">
+
+		<!--头部-->
+		<view class="xmHead">
+			<navigator open-type="navigateBack" class="lt icon0 i-return">
+				<image src="/images/return.png"></image>
+			</navigator>
+			<view class="h2">{{pageTitle}}</view>
+			<view class="rt icon0 i-home" bindtap="goHome">
+				<image src="/images/home.png"></image>
+			</view>
+		</view>
+
+		<view class="content xmCols">
+
+		  <!--手机验证-->
+	      <view class="sendInfo">
+	        <view class="li addr">
+	          <view class="i icon icon0 i-address">
+	          	<image src="/images/address.png"></image>
+	          </view>
+	          <input type="text" class="span" bindtap="popAddr" placeholder="{{address}}"></input>
+	        </view>
+	        <view class="li tel yzm1 {{status.yzmSended ? 'hide' : ''}}">
+	          <view class="i icon icon0 i-phone">
+	          	<image src="/images/phone.png"></image>
+	          </view>
+	          <view class="input">
+	            <input type="digit"placeholder="请填写您的手机号码" value="{{mobile}}"></input>
+	          </view>
+	        </view>
+	      </view>
+
+	      <!--登机时间-->
+	      <view class="noteInfo">
+	        <view class="p">预计送达时间为<view class="em">支付后20分钟</view>，</view>
+	        <view class="p">请留意您的登机时间。</view>
+	      </view>
+
+	      <!--订单-->
+	      <view class="xmOrderList">
+	        <view class="li hd">
+	          <view class="i icon icon0 i-order_detaisl">
+	          	<image src="/images/order_detaisl.png"></image>
+	          </view>
+	          <view class="span">订单明细</view>
+	        </view>
+	        <view class="item" wx:for="{{orderLists}}" wx:key="index">
+	          <view class="colLayout">
+	            <image mode="aspectFill" class="icon" wx:if="{{item.shopLogo}}" src="{{item.shopLogo}}"></image>
+	            <image mode="aspectFill" class="icon" wx:if="{{!item.shopLogo}}" src="/images/defHd.jpg"></image>
+	            <view class="span">{{item.shopName}}</view>
+	            <view class="note" wx:if="{{!areaFlags[index]}}">
+	            	<text>此店铺不在配送范围内</text>
+	            	<view class="btn" data-opt="{{index}}" bindtap="delShop">删除</view>
+	            </view>
+	          </view>
+	          <view class="main">
+	            <view class="li" wx:for="{{item.goodsList}}" wx:for-item="good" wx:for-index="i" wx:key="i">
+	              <view bindtap="goDetail" data-opt="{{good.prodId}}" class="lt img">
+	              	<image class="imgLoad" src="/images/loading.gif"></image>
+	                <image mode="aspectFill" wx:if="{{good.thumbnailName}}" src="{{good.thumbnailName}}"></image>
+	                <image mode="aspectFill" class="line" wx:if="{{!good.thumbnailName}}" src="/images/no_pic.png"></image>
+	              </view>
+	              <view class="cen">
+	                <view bindtap="goDetail" data-opt="{{good.prodId}}">
+	                  <view class="h4">{{good.goodsName}}</view>
+	                </view>
+	              </view>
+	              <view class="right">
+	                <view class="span">x{{good.goodsNumber}}</view>
+	                <view class="em">￥ {{good.goodsPrice}}</view>
+	              </view>
+	            </view>
+	          </view>
+	          <view class="info">
+	            <view class="p">
+	              <view class="label fl">包装费 </view>
+	              <view class="span fr">￥0</view>
+	            </view>
+	            <view class="p">
+	              <view class="label fl">配送费 </view>
+	              <view class="span fr">￥0</view>
+	            </view>
+	          </view>
+	          <view class="foot3">
+	            <view class="fl">合计</view> <view class="fr"><view class="em">￥{{item.sumPrice}}</view></view>
+	          </view>
+	        </view>
+	      </view>
+
+	      <view class="handles">
+	        <view class="p" bindtap="goCart">
+	        	<view class="icon0 i-return">
+	        		<image src="/images/return.png"></image>
+	        	</view>
+	        返回购物车
+	        </view>
+	      </view>
+
+	      <view class="footBanner">
+	        <view class="_wrap">
+	          <view class="lt">
+	            <view class="_sum">
+	              <view class="label">合计：</view><view class="em">￥{{settleStorage.sumPrice}}</view>
+	            </view>
+	          </view>
+	          <a class="rt on" bindtap="confirmHandle">提交订单</a>
+	        </view>
+	      </view>
+
+		</view>
+
+	</view>
+</view>

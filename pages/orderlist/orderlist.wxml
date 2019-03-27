@@ -1,0 +1,101 @@
+<view class="xmContainer">
+	<view class="xmOrderList">
+
+		<!--头部-->
+		<view class="xmHead">
+			<navigator open-type="navigateBack" class="lt icon0 i-return">
+				<image src="/images/return.png"></image>
+			</navigator>
+			<view class="h2">{{pageTitle}}</view>
+			<view class="rt icon0 i-home" bindtap="goHome">
+				<image src="/images/home.png"></image>
+			</view>
+		</view>
+
+	    <view class="wraper">
+	      <view class="tabs">
+	        <view class="li {{0===tabActive ? 'active' : ''}}" data-opt="0" bindtap="tabTo"><view class="p">全部</view></view>
+	        <view class="li {{1===tabActive ? 'active' : ''}}" data-opt="1" bindtap="tabTo"><view class="p">待付款</view></view>
+	        <view class="li {{2===tabActive ? 'active' : ''}}" data-opt="2" bindtap="tabTo"><view class="p">已付款</view></view>
+	        <view class="li {{3===tabActive ? 'active' : ''}}" data-opt="3" bindtap="tabTo"><view class="p">已取消</view></view>
+	      </view>
+	      <view class="lists">
+	        <!--全部订单-->
+	        <view class="section">
+	            <view class="xmOrderList xmCols">
+	              <view class="item" wx:for="{{items}}" wx:key="index0">
+	                <view class="colLayout shop">
+	                  <image mode="aspectFill" class="icon" wx:if="{{item.shopLogo}}" src="{{item.shopLogo}}"></image>
+	                  <image mode="aspectFill" class="icon" wx:if="{{!item.shopLogo}}" src="/images/defHd.jpg"></image>
+	                  <view class="span">{{item.shopName}}</view>
+	                  <view class="span right {{'s'+item.orderStatus}}">
+	                    {{item.statusTxt}}
+	                  </view>
+	                </view>
+	                <view class="main noLine">
+	                  <view class="li" wx:for="{{item.goodsList}}" wx:for-item="good" wx:for-index="i" wx:key="i">
+	                    <view bindtap="goOrderinfo" data-opt="{{item.orderCode}}" class="lt img">
+	                      <image class="imgLoad" src="/images/loading.gif"></image>
+	                      <image mode="aspectFill" wx:if="{{good.thumbnailName}}" src="{{good.thumbnailName}}"></image>
+	                      <image mode="aspectFill" class="line" wx:if="{{!good.thumbnailName}}" src="/images/no_pic.png"></image>
+	                    </view>
+	                    <view class="cen"  bindtap="goOrderinfo" data-opt="{{item.orderCode}}">
+	                        <view class="h4">{{good.goodsName}}</view>
+	                    </view>
+	                    <view class="right">
+	                      <view class="span"> × {{good.totalNumber}}</view>
+	                      <view class="em">￥ {{good.goodsPrice}}</view>
+	                    </view>
+	                  </view>
+	                </view>
+	                <view class="foot">
+	                  <view class="ol fl">
+	                    <view class="span">包装费￥0</view>
+	                  <view class="span">配送费￥0</view>
+	                  </view>
+	                  <view class="ol fr">
+	                    <!-- <span>共{{item.sumNum}}件商品,</span> -->
+	                    <view class="span">实付 <view class="em">￥{{item.sumPrice}}</view></view>
+	                  </view>
+	                </view>
+	                <view class="btns">
+	                  <!--取消订单-->
+	                  <view class="xmBtn gray" wx:if="{{item.orderStatus === 100}}" data-opt="{{index}}" bindtap="cancelOrder">取消订单</view>
+	                  <!--去支付-->
+	                  <view bindtap="goPay" data-opt="{{item.orderCode}}" class="xmBtn" wx:if="{{item.orderStatus === 100}}">去支付</view>
+	                  <!--查看订单-->
+	                  <view bindtap="goOrderinfo" data-opt="{{item.orderCode}}" wx:if="{{item.orderStatus != 100}}" class="xmBtn gray">查看订单</view>
+	                </view>
+	              </view>
+	            </view>
+	            <view class="endNote" wx:if="{{isEnd}}">已经没有数据了~</view>
+	          <!--没有内容-->
+	          <view class="noContent" wx:if="{{noContent}}">
+	            <view class="p">亲，此处没有内容~ ！</view>
+	          </view>
+	        </view>
+	      </view>
+	    </view>
+
+	      <!--取消订单-->
+	      <view class="popWin popCancel" wx:if="{{openCancel}}">
+	        <view class="xmMask" bindtap="closeWin"></view>
+	        <view class="main">
+	          <view class="xmClose icon0 i-quit" bindtap="closeWin">
+	          	<image src="/images/quit.svg"></image>
+	          </view>
+	          <view class="img">
+		          <image class="imgLoad" src="/images/loading.gif"></image>
+		          <image class="image" mode="aspectFill" src="{{cancelImage}}"></image>
+	          </view>
+	          <view class="ol">
+	            <view class="p">你明明很想吃</view>
+	            <view class="p">为什么要取消订单呢</view>
+	            <view class="p">so sad…</view>
+	          </view>
+	          <view class="btn" bindtap="confirmCancel">我心意已决</view>
+	        </view>
+	      </view>
+
+	</view>
+</view>

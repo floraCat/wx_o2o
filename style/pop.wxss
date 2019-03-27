@@ -1,0 +1,69 @@
+
+/*开启充电*/
+.popMain {
+    z-index: 999;
+    position: fixed;
+    top: 26%;
+    left: 50%;
+    width: 80%;
+    left: 10%;
+    background: #fff;
+    overflow: hidden;
+    padding: 36rpx 0 54rpx;
+    border-radius: 19rpx;
+}
+.popMain .em1 {
+    height: 120rpx;
+    line-height: 120rpx;
+    text-align: center;
+    font-size: 40rpx;
+}
+.popMain .span0 {
+    line-height: 32rpx;
+    color: #fb4f45;
+    font-size: 24rpx;
+    text-align: center;
+    margin-bottom: 28rpx;  
+}
+.popMain .btn {
+    width: 360rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 30rpx;
+    background: #44A0FF;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 30rpx;
+}
+.popMain .btn2 {
+    width: 60%;
+    margin: 30rpx auto 0;
+    height: 70rpx;
+    padding: 5rpx 0;
+    background: #44A0FF;
+    overflow: hidden;
+}
+.popMain .sao {
+    margin: 0 auto;
+    width: 160rpx;
+    height: 60rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+    padding: 10rpx;
+}
+.popMain .sao.show {
+    display: block;
+}
+.popMain .sao image {
+    float: left;
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+}
+.popMain .sao text {
+    float: left;
+    font-size: 26rpx;
+    line-height: 40rpx;
+    color: #fff;
+}

@@ -1,0 +1,145 @@
+
+/*推送信息弹窗*/
+
+.pushMask {
+    z-index: 990;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .8;
+}
+.pushQuit {
+    z-index: 999;
+    position: fixed;
+    top: 16%;
+    left: 50%;
+    width: 72rpx;
+    height: 72rpx;
+    margin-left: -36rpx;
+    border-radius: 50%;
+    border: #666 2rpx solid;
+    background: #fff;
+    background-size: 52rpx;
+}
+.pushMain {
+    z-index: 999;
+    position: fixed;
+    top: 26%;
+    left: 50%;
+    width: 80%;
+    left: 10%;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 19rpx;
+}
+.pushMain .push {
+    padding: 41rpx 0 30rpx;
+    border-top: #E1E1E1 2rpx solid;
+}
+.pushMain .hd2 {
+    overflow: hidden;
+    padding: 0 40rpx 0;
+    margin-bottom: 32rpx;
+}
+.pushMain .hd2 .h6 {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333;
+}
+.pushMain .hd2 .link {
+    color: #333;
+    font-size: 14px;
+}
+.pushMain .pics {
+    white-space: nowrap; 
+    display: flex;
+}
+.pushMain .pics .pic {
+    position: relative;
+    display: inline-block;
+    width: 220rpx;
+    text-align: center;
+}
+.pushMain .pics .h4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.pushMain .pics .pic .img {
+    width: 188rpx;
+    height: 246rpx!important;
+    margin: 0 auto;
+    border-radius: 10rpx;
+}
+.pushMain .h3 {
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    background: #f08165;
+    color: #fff;
+    font-weight: normal;
+    font-size: 35rpx;
+    letter-spacing: 2rpx;
+}
+.pushMain .em0 {
+    height: 130rpx;
+    line-height: 130rpx;
+    text-align: center;
+    font-size: 68rpx;
+}
+.pushMain .span0 {
+    line-height: 32rpx;
+    color: #fb4f45;
+    font-size: 22rpx;
+    text-align: center;
+    margin-bottom: 28rpx;  
+}
+.pushMain .btn {
+    width: 360rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    background: #44A0FF;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto 32rpx;
+    border-radius: 30rpx;
+}
+.pushMain .ol {
+    padding: 50rpx 0 40rpx 32rpx;
+}
+.pushMain .ol .li image {
+    width: 86%;
+    margin: 0 auto;
+    border-radius: 18rpx;
+}
+.pushMain .hd {
+    overflow: hidden;
+    padding: 0 40rpx;
+    margin: 20rpx 0 32rpx;
+}
+.pushMain .hd .h6 {
+    color: #333;
+}
+.pushMain .hd .link {
+    text-decoration: none;
+    color: #333;
+    font-size: 28rpx;
+}
+.pushMain .fl {
+    float: left;
+}
+.pushMain .fr {
+    float: right;
+}
+.pushMain .ol .li .p{
+    text-indent: 6rpx;
+    font-size: 24rpx;
+    height: 52rpx;
+    line-height: 52rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

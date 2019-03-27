@@ -1,0 +1,157 @@
+
+/*列表（首页&店铺页）*/
+.listWrap {
+	z-index: 99;
+	position: relative;
+	padding-bottom: 130rpx;
+	background: #fff;
+}
+.listHome {
+	position: relative;
+}
+.listHome .h3 {
+	height: 50rpx;
+	line-height: 50rpx;
+	font-size: 36rpx;
+	font-weight: bold;
+	text-indent: 36rpx;
+	color: #4A4A4A;
+	padding: 28rpx 0 6rpx;
+}
+.listHome .ul {
+	width: 90%;
+	margin: 0 auto;
+}
+.listHome .li {
+	position: relative;
+	overflow: hidden;
+	padding: 20rpx 0;
+}
+.listHome .li .item {
+	display: block;
+	position: relative;
+	color: #333;
+	overflow: hidden;
+}
+
+.listHome .li .img {
+	position: relative;
+	float: left;
+	width: 160rpx;
+	height: 160rpx;
+	border: #eee 1px solid;
+	line-height: 157rpx;
+}
+.listHome .li .img image {
+	width: 160rpx;
+	height: 160rpx;
+	vertical-align: middle;
+}
+.listHome .li .info {
+	padding-left: 188rpx;
+}
+.listHome .li .info .h4 {
+	font-weight: bold;
+	font-size: 32rpx;
+	line-height: 60rpx;
+}
+.listHome .li .info .p1 {
+	overflow: hidden;
+	line-height: 40rpx;
+	font-size: 24rpx;
+	margin-bottom: 8rpx;
+}
+.listHome .li .info .p1 .p {
+	line-height: 40rpx;
+	font-size: 26rpx;
+	color: #9b9b9b;
+}
+.listHome .li .info .p1 .span {
+	display: inline;
+	line-height: 40rpx;
+	font-size: 24rpx;
+	color: #9b9b9b;
+}
+.listHome .li .info .ttl {
+	float: left;
+	color: #9B9B9B;
+	margin-right: 30rpx;
+}
+.listHome .li .info .link {
+	float: left;
+	color: #333;
+	padding-right: 42rpx;
+	position: relative;
+}
+.listHome .li .info .icon0 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 44rpx;
+	height: 52rpx;
+}
+.listHome .li .price {
+	color: #44A0FF;
+	overflow: hidden;
+}
+.listHome .li .price .zs {
+	float: left;
+	font-size: 36rpx;
+	font-weight: bold;
+	color: #44A0FF;
+}
+.listHome .li .price .i {
+	float: left;
+	font-size: 24rpx;
+	color: #44A0FF;
+	margin-left: 10rpx;
+}
+.listHome .li .price .p2 {
+	float: left;
+	font-size: 24rpx;
+	color: #aaa;
+	margin-left: 30rpx;
+}
+.listHome .li .handle {
+	position: absolute;
+	right: 0.4rpx;
+	bottom: 20rpx;
+}
+.listHome .li .noNum {
+	width: 110rpx;
+	height: 52rpx;
+	line-height: 52rpx;
+	background: #ccc;
+	color: #fff;
+	text-align: center;
+	border-radius: 8rpx;
+}
+
+
+
+/*行距排版*/
+.xmCols .li {
+	position: relative;
+	height: 100rpx;
+	line-height: 100rpx;
+	padding: 0 40rpx;
+	border-bottom: #E1E1E1 2rpx solid;
+	overflow: hidden;
+}
+.xmCols .li .span {
+	line-height: 100rpx;
+	color: #C8C8C8;
+}
+.xmCols .li.hd .span {
+	color: #333;
+}
+.xmCols .li .span.on {
+	color: #333;
+}
+.xmCols .icon {
+	position: relative;
+	float: left;
+	width: 70rpx;
+	height: 100rpx;
+	font-size: 48rpx;
+}

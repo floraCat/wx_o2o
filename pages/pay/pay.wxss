@@ -1,0 +1,141 @@
+@import "/style/common.wxss";
+@import "/style/order.wxss";
+@import "/style/cart.wxss";
+@import "/style/layout.wxss";
+@import "/style/push.wxss";
+
+.xmPay .note {
+	color: #4A4A4A;
+	font-size: 24rpx;
+	line-height: 52rpx;
+	text-align: center;
+	padding: 28rpx 0;
+}
+.xmPay .note .em {
+	display: inline;
+	font-size: 28rpx;
+	font-weight: bold;
+	color: #44A0FF;
+}
+.xmPay .footBanner ._btn {
+	height: 100rpx;
+	background: #44A0FF;
+	text-align: center;
+	font-size: 32rpx;
+}
+.xmPay .footBanner .span {
+	display: inline;
+	line-height: 100rpx;
+	vertical-align: top;
+	color: #fff;
+}
+.xmPay .footBanner .em {
+	display: inline;
+	font-size: 56rpx;
+	line-height: 100rpx;
+	color: #fff;
+}
+/*选择支付方式*/
+.paySel .hd {
+	border-top: #E1E1E1 2rpx solid;
+	background: #fff;
+}
+.paySel .hd .i {
+	font-size: 60rpx;
+}
+.checkList {
+	background: #fff;
+}
+.checkList .item {
+	border-bottom: 2rpx solid #eae9e9;
+}
+.checkList .item .link {
+	display: block;
+	overflow: hidden;
+}
+.checkList .item .check {
+	float: left;
+	width: 50rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	text-align: center;
+	position: relative;
+	color: #E1E1E1;
+}
+.checkList .item .i {
+	font-size: 26rpx;
+	height: 100%;
+}
+.checkList .item .check.on {
+	color: #44A0FF;
+}
+.checkList .item .icon {
+	float: left;
+	width: 52rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	margin-right: 24rpx;
+}
+.checkList .item .icon .icon0 {
+	height: 100%;
+	font-size: 52rpx;
+}
+.checkList .item .text {
+	color: #333;
+}
+.checkList .item .text .i {
+	float: left;
+	line-height: 54rpx;
+	font-size: 36rpx;
+}
+.checkList .text .span {
+	color: #333;
+}
+
+
+/*剩余支付时间*/
+.restTime {
+	background: #fff;
+	text-align: center;
+	padding: 40rpx 0 32rpx;
+	border-bottom: #E1E1E1 2rpx solid;
+	margin-bottom: 16rpx;
+}
+.restTime .em {
+	font-size: 72rpx;
+	font-weight: bold;
+	height: 100rpx;
+	line-height: 100rpx;
+	color: #3B5999;
+}
+.restTime .p {
+	font-size: 28rpx;
+	line-height: 48rpx;
+	color: #4A4A4A;
+	margin-bottom: 26rpx;
+}
+.restTime .p .span {
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.restTime .p .s {
+	float: left;
+	color: #44A0FF;
+}
+.restTime .i {
+	display: block;
+	font-size: 24rpx;
+	line-height: 40rpx;
+	color: #999;
+}
+.restTime .s {
+	text-decoration: none;
+}
+.restTime .mxTime {
+	display: inline;
+	color: #44A0FF;
+}
+.restTime .mxTime view {
+	display: inline;
+}

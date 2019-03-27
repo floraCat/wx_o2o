@@ -1,0 +1,306 @@
+
+/*增减数量*/
+.numHandle {
+	overflow: hidden;
+	height: 56rpx;
+	position: relative;
+}
+.numHandle .i {
+	position: relative;
+	font-size: 44rpx;
+	float: left;
+	width: 56rpx;
+	line-height: 56rpx;
+	height: 56rpx;
+	text-align: center;
+}
+.numHandle .i._sub {
+	color: #999;
+}
+.numHandle .i._add {
+	color: #44A0FF;
+}
+.numHandle .num {
+	width: 72rpx;
+	font-weight: bold;
+	float: left;
+	line-height: 56rpx;
+	height: 56rpx;
+	text-align: center;
+}
+
+/*加入购物车*/
+.addToCart {
+	width: 176rpx;
+	height: 44rpx;
+	line-height: 44rpx;
+	text-align: center;
+	border-radius: 22rpx;
+	background: #44A0FF;
+	color: #fff;
+	margin-top: 4rpx;
+}
+.addToCart .span {
+	color: #fff;
+	font-size: 24rpx;
+	line-height: 44rpx;
+}
+
+/*飞入购物车动画*/
+.good_box {
+  z-index: 9999;
+  width: 40rpx;
+  height: 40rpx;
+  position: fixed;
+  border-radius: 50%;
+  overflow: hidden;
+  left: 50%;
+  top: 50%;
+  z-index: +99;
+  background: #fb4f45;
+}
+
+
+/*选规格*/
+.ruleHandle {
+	position: relative;
+	width: 148rpx;
+	height: 58rpx;
+	text-align: center;
+	border-radius: 30rpx;
+	background-color: #44A0FF;
+}
+.ruleHandle .p {
+	color: #ffffff;
+	font-size: 28rpx;
+	line-height: 58rpx;
+}
+.ruleHandle .span {
+	position: absolute;
+	top: -12rpx;
+	right: 0;
+	padding: 0 10rpx;
+	height: 36rpx;
+	line-height: 36rpx;
+	color: #fff;
+	font-size: 22rpx;
+	background: #fb4f45;
+	text-align: center;
+	border-radius: 50%;
+	opacity: .9;
+}
+
+/*弹窗：规格*/
+.xmRule.fixed {
+	z-index: 901;
+	position: fixed;
+	top: 28%;
+	left: 0;
+	width: 100%;
+}
+.xmRule .xmClose {
+	position: absolute;
+	top: 254rpx;
+}
+.xmRule .main {
+	position: relative;
+	width: 572rpx;
+	margin: 0 auto;
+	background: #fff;
+	border-radius: 26rpx;
+	overflow: hidden;
+	box-shadow: #333 0 0 30rpx;
+}
+.xmRule .main .img {
+	height: 284rpx;
+	overflow: hidden;
+}
+.xmRule .main .img img {
+	margin-top: -142rpx;
+}
+.xmRule .main .h5 {
+	font-size: 36rpx;
+	height: 50rpx;
+	line-height: 50rpx;
+	margin-top: 50rpx;
+	text-align: center;
+	color: #333;
+	font-weight: bold;
+}
+.xmRule .main .rule {
+	margin: 16rpx 0 42rpx;
+	padding: 0 30rpx;
+}
+.xmRule .main .h6 {
+	font-size: 24rpx;
+	margin-bottom: 16rpx;
+}
+.xmRule .main .ul {
+	overflow: hidden;
+}
+.xmRule .main .ul .link {
+	display: block;
+	float: left;
+	color: #666;
+	font-size: 24rpx;
+	padding: 0 34rpx;
+	text-align: center;
+	height: 56rpx;
+	line-height: 52rpx;
+	border: #C8C8C8 2rpx solid;
+	margin: 0 20rpx 20rpx 0;
+	border-radius: 32rpx;
+}
+.xmRule .main .ul .link.on {
+	border: #44A0FF 2rpx solid;
+	background: #edf3ff;
+}
+.xmRule .main .ol {
+	overflow: hidden;
+	background: #E1E1E1;
+	height: 56rpx;
+	padding: 20rpx 30rpx;
+}
+.xmRule .main .info {
+	float: left;
+	line-height: 48rpx;
+}
+.xmRule .main .em {
+	color: #44A0FF;
+	font-size: 40rpx;
+	margin-right: .4rpx;
+}
+.xmRule .main .handle {
+	float: right;
+}
+.xmClose2 {
+	position: absolute;
+	top: 15rpx;
+	right: 15rpx;
+	width: 56rpx;
+	height: 56rpx;
+}
+
+
+/*底部*/
+.footBanner {
+	z-index: 800;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+.footBanner ._wrap {
+	width: 100%;
+	max-width: 1280rpx;
+	margin: 0 auto;
+}
+.footBanner .lt {
+	float: left;
+	width: 510rpx;
+	height: 100rpx;
+	background: #E1E1E1;
+	line-height: 40rpx;
+	font-size: 24rpx;
+}
+.footBanner ._cart {
+	position: absolute;
+	bottom: 12rpx;
+	left: 40rpx;
+	width: 100rpx;
+	height: 100rpx;
+	line-height: 92rpx;
+	text-align: center;
+	background: #999;
+	border-radius: 50%;
+}
+.footBanner ._cart .i {
+	width: 100rpx;
+	height: 100rpx;
+}
+.footBanner ._cart .span {
+	position: absolute;
+	top: -12rpx;
+	right: -12rpx;
+	width: 48rpx;
+	height: 48rpx;
+	font-size: 22rpx;
+	line-height: 50rpx;
+	text-align: center;
+	color: #fff;
+	border-radius: 50%;
+	background: #fb4f45;
+}
+.footBanner ._cart.on {
+	background: #44A0FF;
+}
+.footBanner ._sel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100rpx;
+	margin-right: 20rpx;
+}
+.footBanner ._sel .all {
+	float: left;
+	width: 60rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	margin-left: 20rpx;
+	position: relative;
+
+}
+.footBanner ._sel .all .icon0 {
+	height: 100%;
+}
+.footBanner ._sel .span {
+	float: left;
+    color: #9a9a9a;
+    line-height: 100rpx;
+}
+.footBanner ._sum {
+	padding-left: 164rpx;
+	overflow: hidden;
+	height: 100rpx;
+	color: #44A0FF;
+}
+.footBanner ._sum .label {
+	float: left;
+	line-height: 100rpx;
+}
+.footBanner ._sum .span {
+	float: left;
+	font-size: 36rpx;
+	line-height: 100rpx;
+	color: #44A0FF;	
+}
+.footBanner ._sum .em {
+	float: left;
+	font-size: 40rpx;
+	font-weight: bold;
+	line-height: 100rpx;
+	color: #44A0FF;					
+}
+.footBanner .rt {
+	float: right;
+	width: 240rpx;
+	text-align: center;
+	height: 100rpx;
+	line-height: 100rpx;
+	background: #999;
+	font-size: 32rpx;
+	color: #fff;
+}
+.footBanner .rt.on {
+	background: #44A0FF;
+}
+
+.xmSettle .footBanner ._sum, .xmPay .footBanner ._sum {
+	padding-left: 1rem;
+}
+.xmSettle .footBanner .p, .xmPay .footBanner .p {
+	color: #9a9a9a; 
+}
+.xmSettle .footBanner ._note, .xmPay .footBanner ._note {
+	padding-left: 1rem; 
+}

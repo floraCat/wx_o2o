@@ -1,0 +1,279 @@
+@import "/style/common.wxss";
+@import "/style/layout.wxss";
+@import "/style/order.wxss";
+@import "/style/cart.wxss";
+
+
+.xmSettle {
+	padding-bottom: 150rpx;
+}
+.xmSettle .handles {
+	overflow: hidden;
+	padding: 0 40rpx;
+}
+.xmSettle .handles .p {
+	position: relative;
+	float: right;
+	line-height: 100rpx;
+	padding-left: 40rpx;
+}
+.xmSettle .handles .p .icon0 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 40rpx;
+	height: 100rpx;
+}
+.xmSettle .handles .p image {
+	width: 26rpx;
+	height: 26rpx;
+}
+.xmSettle .xmOrderList .item {
+	border-bottom: none;
+}
+
+
+/*配送地址 & 手机验证*/
+.sendInfo {
+	background: #fff;
+}
+.sendInfo .addr {
+	font-size: 28rpx;
+}
+.sendInfo ._btn {
+	padding: 20rpx 0;
+	height: 120rpx;
+}
+.sendInfo ._btn .link {
+	display: block;
+	width: 60%;
+	margin: 0 auto;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	background: #44A0FF;
+	color: #fff;
+	border-radius: 8rpx;
+}
+.sendInfo .span {
+	height: 100rpx;
+	color: #666!important;
+	-webkit-text-fill-color:#999;
+}
+.sendInfo .tel {
+	position: relative;
+	width: 678rpx;
+	padding: 0 4rpx;
+	margin: 0 auto;
+}
+.sendInfo .tel .input {
+	width: 460rpx;
+	float: left;
+}
+.sendInfo .tel .input input {
+	width: 100%;
+	padding: 20rpx 0;
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 28rpx;
+	border: none;
+	-webkit-text-fill-color:#999;  
+    -webkit-opacity:1;  
+    opacity: 1;  
+}
+.sendInfo .tel .input.on input {
+	-webkit-text-fill-color:#333;
+}	
+.sendInfo .tel .getPhone {
+	position: absolute;
+	right: 0;
+	top: 20rpx;
+	width: 200rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	font-size: 28rpx;
+	background: #44A0FF;
+	color: #fff;
+}
+.sendInfo .btn {
+	position: absolute;
+	top: 0;
+	right: 40rpx;
+	line-height: 100rpx;
+}
+.sendInfo .yzm1 .btn {
+	right: 4rpx;
+	line-height: 92rpx;
+	color: #44a0ff;
+}
+.sendInfo .yzm1 .btn .send {
+	color: #44a0ff; 
+}
+.sendInfo .yzm1 .btn.gray {
+	color: #999;
+}
+/*.sendInfo .yzm1 .timeInt {
+	font-size: 8.4rpx;
+	display: none;
+}*/
+.sendInfo .yzm1.noLine {
+	border-bottom: none;
+}
+.sendInfo .yzm1.hide {
+	border-bottom: none;
+}
+.sendInfo .yzm1 .timeInt {
+	display: inline;
+	border-color: #ccc;
+	color: #aaa;
+}
+.sendInfo .yzm1 .timeInt view {
+	display: inline;
+	color: #aaa;
+}	
+.sendInfo .yzm1 input {
+	border-color: #E1E1E1;
+	color: #999;
+}	
+.sendInfo .note {
+	font-size: 8.4rpx;
+	color: #888;
+	text-align: right;
+	padding: 0 40rpx;
+	padding-bottom: 16rpx;
+}
+.sendInfo .note .p {
+	font-size: 22rpx;
+	color: #999;
+}
+.sendInfo .note.hide {
+	display: none;
+}
+.sendInfo .yzm2 {
+	padding-left: 80rpx;
+	border-bottom: none;
+	border-top: #E1E1E1 2rpx solid;
+}
+.sendInfo .yzm2.hide {
+	display: none;
+}
+
+/*提示*/
+.noteInfo {
+	font-size: 24rpx;
+	padding: 20rpx 0;
+	text-align: center;
+	line-height: 52rpx;
+	border-top: #E1E1E1 2rpx solid;
+	border-bottom: #E1E1E1 2rpx solid;
+}
+.noteInfo .em {
+	display: inline;
+	font-size: 28rpx;
+	font-weight: bold;
+	color: #44A0FF;
+}
+.noteInfo .time {
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #44A0FF;
+}
+
+
+/*选择定位*/
+.selectAddr {
+	display: none;
+	z-index: 999;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+.selectAddr.show {
+	display: block;
+}
+.selectAddr .mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: .5;
+}
+.selectAddr .hd {
+	z-index: 1000;
+	position: absolute;
+	top: 40rpx;
+	left: 0;
+	width: 100%;
+	display: flex;
+	text-align: center;
+	background: #fff;
+	padding-top: 16rpx;
+}
+.selectAddr .hd .li {
+	flex: 1;
+}
+.selectAddr .hd .li text {
+	display: block;
+	margin: 0 auto;
+	height: 54rpx;
+	line-height: 54rpx;
+	width: 148rpx;
+	font-size: 28rpx;
+	border-bottom: #44A0FF 4rpx solid;
+}
+.selectAddr picker-view-column {
+	background: #fff;
+	text-align: center;
+}
+.sendInfo .sao {
+	display: none;
+	position: absolute;
+	top: 20rpx;
+	right: 30rpx;
+	width: 60rpx;
+	height: 60rpx;
+	line-height: 40rpx;
+	overflow: hidden;
+	padding: 10rpx;
+	background: #44A0FF;
+}
+.sendInfo .sao.show {
+	display: block;
+}
+.sendInfo .sao image {
+	float: left;
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 10rpx;
+}
+
+.xmSettle .item .note {
+	position: absolute;
+	right: 40rpx;
+	top: 0;
+	height: 100rpx;
+	line-height: 100rpx;
+	overflow: hidden;
+}
+.xmSettle .item .note text {
+	float: left;
+	font-size: 24rpx;
+	color: #fb4f45;
+	margin-right: 10rpx;
+}
+.xmSettle .item .note .btn {
+	float: left;
+	height: 50rpx;
+	line-height: 50rpx;
+	width: 80rpx;
+	text-align: center;
+	margin-top: 25rpx;
+	background: #fb4f45;
+	color: #fff;
+	font-size: 24rpx;
+	border-radius: 8rpx;
+}

@@ -1,0 +1,276 @@
+
+
+
+/*各状态样式*/
+.s100,.s403 {
+	color: #D0021B;
+}
+.s200,.s300 {
+	color: #73bf70;
+}
+.s103,.s102,.s500 {
+	color: #999;
+}
+.s401,.s303,.s400 {
+	color: #1DBD87;
+}
+
+
+/*列表*/
+.xmOrderList .hd {
+	background: #fff;
+}
+.xmOrderList .item {
+	background: #fff;
+	border-bottom: #E1E1E1 2rpx solid;
+}
+.xmOrderList .item .li {
+	border-bottom: none!important;
+}
+.xmOrderList .main {
+	border-bottom: #D8D8D8 2rpx solid;
+	margin: 0 40rpx;
+}
+.xmOrderList .main.noLine {
+	border-bottom: none!important;
+	margin-bottom: 30rpx;
+}
+.xmOrderList .main .link {
+	color: #4A4A4A;
+}
+.xmOrderList .main .li {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 24rpx;
+	padding: 0;
+}
+.xmOrderList .main .lt {
+	position: relative;
+	float: left;
+	margin-right: 40rpx;
+	width: 96rpx;
+	height: 96rpx;
+	line-height: 96rpx;
+	border: #eee 1px solid;
+	overflow: hidden;
+}
+.xmOrderList .main .lt image {
+	width: 96rpx;
+	height: 96rpx;
+	margin-top: -2rpx;
+	vertical-align: middle;
+}
+.xmOrderList .main .cen {
+	float: left;
+	width: 350rpx;
+}
+xmOrderList .main .cen .ttl {
+	line-height: 100rpx;
+}
+.xmOrderList .main .h4 {
+	color: #333;
+	font-size: 28rpx;
+	line-height: 100rpx;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.xmOrderList .main .right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 200rpx;
+	font-size: 28rpx;
+	text-align: right;
+}
+.xmOrderList .main .right .span {
+	display: inline;
+	color: #9B9B9B;
+	line-height: 100rpx;
+}
+.xmOrderList .main .right .em {
+	display: inline;
+	margin-left: 40rpx;
+	line-height: 100rpx;
+}
+.xmOrderList .foot {
+	text-align: right;
+	line-height: 40rpx;
+	padding: 0 40rpx;
+	margin-bottom: 30rpx;
+	overflow: hidden;
+}
+.xmOrderList .foot .fl .span {
+	display: inline;
+	margin-left: 40rpx;
+	margin-left: 0;
+	margin-right: 8rpx;
+}
+.xmOrderList .foot .span {
+	display: inline;
+	margin-left: 40rpx;
+	color: #999;
+	font-size: 24rpx;
+	margin-left: 8rpx;
+}
+.xmOrderList .foot .em {
+	display: inline;
+	margin-left: 40rpx;
+	font-size: 28rpx;
+	color: #4A4A4A;
+}
+.xmOrderList .foot3 {
+	line-height: 40rpx;
+	padding: 0 40rpx;
+	padding-bottom: 30rpx;
+	overflow: hidden;
+	border-bottom: #E1E1E1 2rpx solid;
+}
+.xmOrderList .foot3 .em {
+	display: inline;
+	margin-left: 40rpx;
+	color: #44A0FF;
+}
+.xmOrderList .btns {
+	padding: 20rpx 30rpx;
+	border-top: #E1E1E1 2rpx solid;
+	overflow: hidden;
+}
+.xmOrderList .btns .xmBtn {
+	float: right;
+	margin-left: 12rpx;
+}
+.xmOrderList .info {
+	font-size: 28rpx;
+	line-height: 40rpx;
+	padding: 32rpx 40rpx;
+	background: #fff;
+}
+.xmOrderList .info .p {
+	overflow: hidden;
+	margin-bottom: 24rpx;
+}
+.xmOrderList .info .p:last-child {
+	margin-bottom: 0;
+}
+.xmOrderList .info .span {
+	color: #9B9B9B; 
+}
+.xmOrderList .info2 {
+	height: 100rpx;
+	line-height: 100rpx;
+	padding: 0 40rpx;
+	color: #aaa;
+	font-size: 24rpx;
+	text-align: right;
+	overflow: hidden;
+}
+
+
+/**/
+.colLayout {
+	overflow: hidden;
+	position: relative;
+	padding: 24rpx 40rpx 36rpx;
+}
+.colLayout .span {
+	float: left;
+	line-height: 60rpx;
+}
+.colLayout .icon {
+	float: left;
+	width: 60rpx;
+	height: 60rpx;
+	margin-right: 28rpx;
+	border-radius:50%;
+}
+.colLayout .right {
+	position: absolute;
+	top:24rpx;
+	right: 40rpx;
+}
+.colLayout ._tel {
+	padding-right: 40rpx;
+}
+.colLayout ._tel .i { 
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+/*弹窗*/
+.popWin {
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.popWin .main {
+	z-index: 999;
+	position: absolute;
+	top: 22%;
+	left: 50%;
+	margin-left: -286rpx;
+	width: 572rpx;
+	padding: 0 0 36rpx;
+	background: #fff;
+	text-align: center;
+	border-radius: 26rpx;
+}
+.popWin .img {
+	position: relative;
+	width: 100%;
+	height: 282rpx;
+	margin-bottom: 42rpx;
+	border-top-left-radius: 26rpx;
+	border-top-right-radius: 26rpx;
+	overflow: hidden;
+	-webkit-transform:rotate(0deg)
+}
+.popWin .img .image {
+	width: 100%;
+	position: relative;
+	top: -70rpx;
+}
+.popWin .p {
+	font-size: 28rpx;
+}
+.popWin .em {
+	display: block;
+	font-size: 72rpx;
+	line-height: 100rpx;
+}
+.popWin .span {
+	display: block;
+	line-height: 40rpx;
+	color: $emCol;
+	font-size: 22rpx;
+	margin-bottom: 36rpx;
+}
+.popWin .btn {
+	display: block;
+	width: 360rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	background: #44A0FF;
+	color: #fff;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 30rpx;
+}
+
+.popCancel .ol {
+	padding: 4rpx 0 30rpx;
+}
+.popCancel .p {
+	font-size: 36rpx!important;
+	line-height: 48rpx;
+}
+.popCancel .btn {
+	background: #fff!important;
+	border: #4A4A4A 2rpx solid;
+	color: #4A4A4A!important;
+	font-size: 28rpx;
+}

@@ -1,0 +1,134 @@
+<view class="xmContainer">
+	<view class="xmOrders">
+
+		<!--头部-->
+		<view class="xmHead">
+			<navigator open-type="navigateBack" class="lt icon0 i-return">
+				<image src="/images/return.png"></image>
+			</navigator>
+			<view class="h2">{{pageTitle}}</view>
+			<view class="rt icon0 i-home" bindtap="goHome">
+				<image src="/images/home.png"></image>
+			</view>
+		</view>
+
+		<!--各列表入口-->
+		<view class="orderCats">
+	      <view class="ul">
+	        <view class="li">
+	          <view bindtap="goOrderlist" data-opt="{{1}}" class="link">
+	            <view class="i icon0 i-obligations">
+	            	<image src="/images/obligations.png"></image>
+	            </view>
+	            <view class="span">待付款</view>
+	          </view>
+	        </view>
+	        <view class="li">
+	          <view bindtap="goOrderlist" data-opt="{{2}}" class="link">
+	            <view class="i icon0 i-complete">
+	            	<image src="/images/complete.png"></image>
+	            </view>
+	            <view class="span">已付款</view>
+	          </view>
+	        </view>
+	        <view bindtap="goOrderlist" data-opt="{{3}}" class="li">
+	          <view class="link">
+	            <view class="i icon0 i-cancel">
+	            	<image src="/images/cancel.png"></image>
+	            </view>
+	            <view class="span">已取消</view>
+	          </view>
+	        </view>
+	      </view>
+	    </view>
+
+	    <!--最新订单(有记录)-->
+	    <view class="orderLast xmCols">
+	      <view class="head"><view class="h3">最近订单</view></view>
+	      <view class="xmOrderList hasGap"  hidden="{{orders.length <= 0}}">
+	        <view class="item {{item.orderStatus ===200 ? 'end' : ''}}" hidden="{{orders.length <= 0}}" wx:for="{{orders}}" wx:key="index">
+	          <view class="colLayout">
+	          	<view bindtap="goShop" data-opt="{{item.shopId}}">
+		            <image mode="aspectFill" class="icon" hidden="{{!item.shopLogo}}" src="{{item.shopLogo}}"></image>
+		            <image mode="aspectFill" class="icon" hidden="{{item.shopLogo}}" src="/images/defHd.jpg"></image>
+		            <view class="span">{{item.shopName}}</view>
+		            <view class="right {{'s'+item.orderStatus}}">
+		              {{item.statusTxt}}
+		            </view>
+	            </view>
+	          </view>
+	          <view class="main noLine">
+	            <view bindtap="goOrderinfo" data-opt="{{item.orderCode}}" class="_info">
+	              <view class="li" wx:for="{{item.goodsList}}" wx:key="i" wx:for-item="li">
+	                <view class="lt img">
+	                  <image class="imgLoad" src="/images/loading.gif"></image>
+	                  <image mode="aspectFill" hidden="{{!li.thumbnailName}}" src="{{li.thumbnailName}}"></image>
+	                  <image mode="aspectFill" class="line" hidden="{{li.thumbnailName}}" src="/images/no_pic.png"></image>
+	                </view>
+	                <view class="cen">
+	                    <view class="h4">{{li.goodsName}}</view>
+	                </view>
+	                <view class="right">
+	                  <view class="span">x{{li.totalNumber}}</view>
+	                  <view class="em">￥ {{li.goodsPrice}}</view>
+	                </view>
+	              </view>
+	            </view>
+	          </view>
+	          <view class="foot">
+	            <view class="fl">
+	              <view class="span">包装费￥0</view>
+	            <view class="span">配送费￥0</view>
+	            </view>
+	            <view class="fr">
+	              <view class="span">实付 <view class="em">￥{{item.sumPrice}}</view></view>
+	            </view>
+	          </view>
+	          <view class="btns">
+	            <!--取消订单-->
+	            <view class="xmBtn gray" hidden="{{item.orderStatus != 100}}" data-opt="{{index}}" bindtap="cancelOrder">取消订单</view>
+	            <!--去支付-->
+	            <view bindtap="goPay" data-opt="{{item.orderCode}}" class="xmBtn" hidden="{{item.orderStatus != 100}}">去支付</view>
+	            <!--查看订单-->
+	            <view bindtap="goOrderinfo" data-opt="{{item.orderCode}}" hidden="{{item.orderStatus === 100}}" class="xmBtn gray">查看订单</view>
+	          </view>
+	        </view>
+	      </view>
+	      <view  bindtap="goOrderlist" class="note" hidden="{{!orders.length || orders.length <= 0}}">
+        	查看全部订单
+        	<view class="icon0 i-go">
+        		<image src="/images/go.png" />
+        	</view>
+	      </view>
+
+	      <!--没有订单-->
+	      <view class="noOrder" hidden="{{orders.length > 0}}">
+	        <view class="p">您还没有订单记录哦~ 
+	          <view bindtap="goHome">去逛逛</view>
+	        </view>
+	      </view>
+
+	      <!--取消订单-->
+	      <view class="popWin popCancel" hidden="{{!openCancel}}">
+	        <view class="xmMask" bindtap="closeWin"></view>
+	        <view class="main">
+	          <view class="xmClose icon0 i-quit" bindtap="closeWin">
+	          	<image src="/images/quit.svg"></image>
+	          </view>
+	          <view class="img">
+		          <image class="imgLoad" src="/images/loading.gif"></image>
+		          <image class="image" mode="aspectFill" src="{{cancelImage}}"></image>
+	          </view>
+	          <view class="ol">
+	            <view class="p">你明明很想吃</view>
+	            <view class="p">为什么要取消订单呢</view>
+	            <view class="p">so sad…</view>
+	          </view>
+	          <view class="btn" bindtap="confirmCancel">我心意已决</view>
+	        </view>
+	      </view>
+
+	    </view>
+
+	</view>
+</view>

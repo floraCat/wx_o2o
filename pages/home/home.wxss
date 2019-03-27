@@ -1,0 +1,45 @@
+@import "../../style/box.wxss";
+@import "../../style/common.wxss";
+@import "../../style/layout.wxss";
+@import "../../style/cart.wxss";
+@import "../../style/push.wxss";
+@import "../../style/pop.wxss";
+
+
+/*分类*/
+.xmCats {
+	position: relative;
+	z-index: 800;
+	background: #fff;
+	height: 80rpx;
+	line-height: 80rpx;
+	white-space: nowrap; 
+	display: flex;
+	border-bottom: #E1E1E1 2rpx solid;
+}
+.xmCats .li {
+	display: inline-block;
+	width: 165rpx;
+	font-size: 32rpx;
+	text-align: center;
+}
+.xmCats .li.active .span {
+	color: #44A0FF;
+	border-bottom: #44A0FF 4rpx solid;
+}
+.xmCats .li .span {
+	display: block;
+	width: 86%;
+	max-width: 108rpx;
+	height: 60rpx;
+	color: #4A4A4A;
+	margin: 0 auto;
+}
+
+.xmHome .noContent {
+	height: 100rpx;
+	line-height: 100rpx;
+	text-align: center;
+	margin-top: 50rpx;
+	color: #999;
+}

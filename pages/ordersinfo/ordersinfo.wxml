@@ -1,0 +1,119 @@
+<view class="xmContainer">
+	<view class="xmOrderInfo xmOrdersInfo">
+
+		<!--头部-->
+		<view class="xmHead">
+			<navigator open-type="navigateBack" class="lt icon0 i-return">
+				<image src="/images/return.png"></image>
+			</navigator>
+			<view class="h2">{{pageTitle}}</view>
+			<view class="rt icon0 i-home" bindtap="goHome">
+				<image src="/images/home.png"></image>
+			</view>
+		</view>
+
+
+		<view class="content xmCols">
+    
+	      <view class="handles">
+	        <!--成功-->
+	          <view class="i _icon icon0 i-complete">
+	          	<image src="/images/complete.png"></image>
+	          </view>
+	          <view class="p">已支付</view>
+	      </view>
+
+	        <view class="li hd">
+	          <view class="i icon icon0 i-order_detaisl">
+	          	<image src="/images/order_detaisl.png"></image>
+	          </view>
+	          <view class="span">订单明细</view>
+	        </view>
+
+	      <!--配送员-->
+	      <view class="sender" wx:if="{{info.delivery.mobileNo}}">
+	        <view class="colLayout">
+	          <image mode="aspectFill" class="icon" src="/images/defHd.jpg"></image>
+	          <view class="p">
+	            <view class="span">配送员</view>
+	            <view class="span">{{info.delivery.name}}</view>
+	          </view>
+	            <view href="{{'tel:'+ info.delivery.mobileNo}}" class="tel icon0 i-call">
+	            	<image src="/images/call.png"></image>
+	            </view>
+	          </view>
+	        </view>
+
+		<view wx:for="{{list}}" wx:for-item="info">
+
+			<view class="head">订单号：{{info.orderCode}}</view>
+
+	      <!--商品list-->
+	      <view class="xmOrderList">
+	        <view class="item">
+	          <view class="colLayout">
+	            <image class="icon" wx:if="{{info.shopLogo}}" src="{{info.shopLogo}}"></image>
+	            <image class="icon" wx:if="{{!info.shopLogo}}" src="/images/defHd.jpg"></image>
+	            <view class="span">{{info.shopName}}</view>
+	          </view>
+	          <view class="main">
+	            <view class="li" wx:for="{{info.goodsList}}" wx:key="i" wx:for-item="good" wx:for-index="i">
+	              <view bindtap="goDetail" data-opt="{{good.goodsId}}" class="lt img">
+	                <image class="imgLoad" src="/images/loading.gif"></image>
+	                <image mode="aspectFill" wx:if="{{good.thumbnailName}}" src="{{good.thumbnailName}}"></image>
+	                <image mode="aspectFill" class="line" wx:if="{{!good.thumbnailName}}" src="/images/no_pic.png"></image>
+	              </view>
+	              <view class="cen" bindtap="goDetail" data-opt="{{good.goodsId}}">
+	                <view class="h4">{{good.goodsName}}</view>
+	              </view>
+	              <view class="right">
+	                <view class="span"> × {{good.totalNumber}}</view>
+	                <view class="em">￥ {{good.goodsPrice}}</view>
+	              </view>
+	            </view>
+	          </view>
+	          <view class="info">
+	            <view class="p">
+	              <view class="fl">包装费 </view>
+	              <view class="span fr">￥0</view>
+	            </view>
+	            <view class="p">
+	              <view class="fl">配送费</view>
+	              <view class="span fr">￥0</view>
+	            </view>
+	          </view>
+	          <view class="foot">
+	            <view class="span">实付 <view class="em">￥{{info.sumPrice}}</view></view>
+	          </view>
+	        </view>
+	      </view>
+
+	    </view><!--/content-->
+
+	      <!--订单其他信息-->
+	      <view class="others" wx:for="{{list}}" wx:for-item="info" wx:if="{{index===0}}">
+	        <view class="li0">
+	          <view class="label">配送地址</view>
+	          <view class="p">
+	            <view class="span">{{info.distrAddr}}</view>
+	          </view>
+	        </view>
+	        <view class="li0 li2">
+	          <view class="p">
+	            <view class="span">{{info.name}} {{info.mobile}}</view>
+	          </view>
+	        </view>
+	        <view class="li0">
+	          <view class="label">下单时间</view>
+	          <view class="p">{{info.orderDate}}</view>
+	        </view>
+	        <view class="li0">
+	          <view class="label">支付方式</view>
+	          <view class="p">{{info.payTypeTxt}}</view>
+	        </view>
+	      </view>
+
+	    </view>
+
+	</view>
+</view>

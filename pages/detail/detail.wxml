@@ -1,0 +1,131 @@
+<view class="xmContainer">
+	<view class="xmDetail">
+
+		<!--头部-->
+		<view class="xmHead">
+			<navigator open-type="navigateBack" class="lt icon0 i-return">
+				<image src="/images/return.png"></image>
+			</navigator>
+			<view class="h2">{{pageTitle}}</view>
+			<view class="rt icon0 i-home" bindtap="goHome">
+				<image src="/images/home.png"></image>
+			</view>
+		</view>
+
+		<!--商品图-->
+		<view class="bigImg">
+		    <image class="imgLoad" src="/images/loading.gif"></image>
+		    <image mode="widthFix" class="img" src="{{goodsInfo.goodsImage}}"></image>
+			<view class="price">
+				<view class="bg"></view>
+				<view class="p"><view class="span">￥</view><view class="em">{{goodsInfo.goodsPrice}}</view><view class="s" hidden="{{!info.goodsTypes || info.goodsTypes.length <= 1}}">起</view> /份</view>
+			</view>
+		</view>
+
+		<!--商品信息-->
+		<view class="detailMain">
+	  		<view class="handles" hidden="{{!goodsInfo.goodsName}}">
+	  		<!--数量操作-->
+	        <view class="numHandle" wx:if="{{(!info.goodsTypes || info.goodsTypes.length <= 1) && info.goodsTypes[0].inventory != '0' && canAddCart}}">
+	          <view hidden="{{info.goodsNumber <= 0}}" class="i _sub icon0 i-reduce" data-opt="{{info.goodsNumber}},0" bindtap="subCart">
+	          	<image src="/images/reduce.png"></image>
+	          </view> 
+	          <view class="num" hidden="{{info.goodsNumber <= 0}}">{{info.goodsNumber}}</view> 
+	          <view class="i _add icon0 i-add" data-opt="{{info.goodsNumber}},0" bindtap="addCartE">
+	          	<image src="/images/add.png"></image>
+	          </view>
+	        </view>
+	        <!--规格操作-->
+	        <view class="ruleHandle" wx:if="{{(info.goodsTypes && info.goodsTypes.length > 1) && info.goodsTypes[0].inventory != '0' && canAddCart}}" bindtap="popRule">
+	          <view class="p">选规格</view>
+	          <view class="span" hidden="{{info.goodsNumber <= 0}}">{{info.goodsNumber}}</view>
+	        </view>
+	        <!--缺货-->
+		    <view class="noNum" wx:if="{{info.goodsTypes[0].inventory == '0' && canAddCart}}">缺货</view>
+		    <view class="noNum" wx:if="{{!canAddCart}}">不在配送范围</view>
+	      </view>
+	      <view class="shop">
+	        <view bindtap="goShop" data-opt="{{goodsInfo.shopId}}">
+	        	<image wx:if="{{!goodsInfo.shopLogo}}" src="/images/defHd.jpg" />
+	        	<image wx:if="{{goodsInfo.shopLogo}}" src="{{goodsInfo.shopLogo}}" />
+	        </view>
+	        <view bindtap="goShop" data-opt="{{goodsInfo.shopId}}"><view class="p">{{goodsInfo.shopName}}</view></view>
+	      </view>
+	    	<view class="ttl">{{goodsInfo.goodsName}}</view>
+	  		<view class="info"><view class="span">月销{{goodsInfo.totalNum}}</view><view class="span">配送费 ￥0</view></view>
+	  		<view class="content">{{goodsInfo.goodsDesc}}</view>
+		</view>
+
+		<!--弹窗：规格-->
+	    <view class="xmMask" hidden="{{!openRule}}" bindtap="closeWin"></view>
+	    <view class="xmRule fixed xmRule2" hidden="{{!openRule}}">
+	      <view class="main">
+	        <view class="xmClose2 icon0 i-close" bindtap="closeWin">
+	        	<image src="/images/close.png"></image>
+	        </view>
+	        <view class="h5">{{goodsInfo.goodsName}}</view>
+	        <view class="rule">
+	          <view class="h6">规格：</view>
+	          <view class="ul">
+	            <view wx:for="{{curRules}}" wx:key="index" class="link {{ruleIndex == index ? 'on' : ''}}" data-opt="{{index}}" bindtap="switchRule">{{item.goodsType}}</view>
+	          </view>
+	        </view>
+	        <view class="ol">
+	          <view class="info">
+	            <view class="em">￥{{curRules[ruleIndex] && curRules[ruleIndex].goodsPrice}}</view>
+	          </view>
+	          <view class="handle">
+	            <!--加入购物车-->
+	            <view class="addToCart" hidden="{{curRules[ruleIndex] && curRules[ruleIndex].goodsNumber}}">
+	              <view class="p" data-opt="{{curRules[ruleIndex].goodsNumber}},{{ruleIndex}}" bindtap="addCartE">
+	                <view class="span">加入购物车</view>
+	              </view>
+	            </view>
+	            <!--加减操作-->
+	            <view class="numHandle" hidden="{{!curRules[ruleIndex] || !curRules[ruleIndex].goodsNumber}}">
+	              <view class="i _sub icon0 i-reduce" data-opt="{{curRules[ruleIndex].goodsNumber}},{{ruleIndex}}" bindtap="subCart">
+	              	<image src="/images/reduce.png"></image>
+	              </view> 
+	              <view class="num">{{curRules[ruleIndex].goodsNumber}}</view> 
+	              <view class="i _add icon0 i-add" data-opt="{{curRules[ruleIndex].goodsNumber}},{{ruleIndex}}" bindtap="addCartE">
+	              	<image src="/images/add.png"></image>
+	              </view>
+	            </view>
+	          </view>
+	        </view>
+	      </view>
+	    </view>
+
+	    <!--底部购物车-->
+	    <view class="footBanner">
+	      <view class="_wrap">
+	        <view class="lt">
+	          <view bindtap="goCart" class="_cart {{orderStorage.sumNum > 0 ? 'on' : ''}}">
+	            <view wx:if="{{orderStorage.sumNum <= 0}}" class="i icon0 i-cart">
+	            	<image src="/images/cart.png"></image>
+	            </view>
+	            <view wx:if="{{orderStorage.sumNum > 0}}" class="i icon0 i-carted">
+	            	<image src="/images/carted.png"></image>
+	            </view>
+	            <view class="span" hidden="{{orderStorage.sumNum <= 0}}">{{orderStorage.sumNum}}</view>
+	          </view>
+	          <view class="_sum" hidden="{{orderStorage.sumNum <= 0}}">
+	            <view class="span">￥</view><view class="em">{{orderStorage.sumPrice}}</view>
+	          </view>
+	        </view>
+	        <view class="rt {{orderStorage.sumNum > 0 ? 'on' : ''}}" bindtap="settle">去结算</view>
+	      </view>
+	    </view>
+	    <!--飞入购物车-->
+	    <view class="good_box" hidden="{{hide_good_box}}"  style="left: {{bus_x}}px; top: {{bus_y}}px;"></view>
+
+	    <!--开启充电弹窗 start-->
+	    <include src="../components/checkCharge/checkCharge.wxml" />
+	    <!--开启充电弹窗 end-->
+	    
+	    <!--扫一扫弹窗 start-->
+	    <include src="../components/popSao/popSao.wxml" />
+	    <!--扫一扫弹窗 end-->
+
+	</view>
+</view>

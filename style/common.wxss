@@ -1,0 +1,256 @@
+@import "./icon.wxss";
+
+/*zs: #44A0FF */
+/*em: #fb4f45 */
+/*line: #E1E1E1 */
+
+page { background-color: #f0f1f5;}
+view { font:14px/24px PingFangSC,"Microsoft Yahei",arial,Tahoma,sans-serif; color:#333;}
+
+.fl { float: left;}
+.fr { float: right;}
+
+image { z-index: 2; position: relative;}
+/*图片loading*/
+.imgLoad {
+	z-index: 1;
+	width:60rpx!important; 
+	height: 60rpx!important; 
+	position:absolute; 
+	top: 50%; 
+	left: 50%; 
+	margin-left: -30rpx!important; 
+	margin-top: -30rpx!important;
+}
+
+
+/*顶部*/
+.xmHead {
+	z-index: 100;
+	position: relative;
+	border-bottom: #E1E1E1 2rpx solid;
+	height: 84rpx;
+	background: #fff;
+}
+.xmHead .h2 {
+	line-height: 84rpx;
+	font-size: 36rpx;
+	text-align: center;
+	color: #4A4A4A;
+}
+.xmHead .lt {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 96rpx;
+	height: 84rpx;
+	line-height: 84rpx;
+	text-align: center;
+	font-size: 40rpx;
+	color: #454553;
+}
+.xmHead .rt {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 88rpx;
+	height: 84rpx;
+	line-height: 84rpx;
+	text-align: center;
+	font-size: 3.2rpx;
+	color: #44A0FF;
+}
+.xmHead .order {
+	width: 6rpx;
+	font-size: 2.8rpx;
+}
+.xmHead .order .i {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 6rpx;
+	height: 2.4rpx;
+	line-height: 2.4rpx;
+	padding-top: .8rpx;
+	text-align: center;
+	font-size: 2.4rpx;
+	color: #fff;
+}
+.xmHead .order .span {
+	display: block;
+	padding-top: 1.4rpx;
+	font-size: 1.2rpx;
+}
+
+/*覆盖层*/
+.xmMask {
+	z-index: 900;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: .7;
+}
+
+/*按键*/
+.xmBtn {
+	display: inline-block;
+	height: 58rpx;
+	line-height: 58rpx;
+	padding: 0 44rpx;
+	background: #44A0FF;
+	color: #fff;
+	font-size: 28rpx;
+	border-radius: 30rpx;
+}
+.xmBtn.gray {
+	border: #D8D8D8 2rpx solid;
+	line-height: 54rpx;
+	background: #ebebeb;
+	color: #adadad;
+}
+
+/*关闭图标*/
+.xmClose {
+	position: fixed;
+	left: 50%;
+	top: 12%;
+	width: 72rpx;
+	height: 72rpx;
+	line-height: 72rpx;
+	margin-left: -36rpx;
+	font-size: 64rpx;
+}
+.xmClose2 {
+	position: absolute;
+	top: 30rpx;
+	right: 30rpx;
+	width: 26rpx;
+	height: 26rpx;
+}
+.xmClose3 {
+	z-index: 999;
+    position: fixed;
+    top: 16%;
+    left: 50%;
+    width: 72rpx;
+    height: 72rpx;
+    margin-left: -36rpx;
+    border-radius: 50%;
+    border: #666 2rpx solid;
+    background: #fff;
+    background-size: 52rpx;
+}
+
+
+/*搜索*/
+.xmSearch{ 
+	position:relative; 
+	padding: 12rpx 0 0 30rpx;
+}
+.xmSearch .keyword { 
+	width:550rpx; 
+	height:36rpx; 
+	line-height:36rpx; 
+	font-size: 28rpx;
+	padding: 8rpx 0 8rpx 72rpx;
+	border: #E1E1E1 2rpx solid; 
+	border-radius: 10rpx;
+}
+.xmSearch .txt {
+	color: #C8C8C8;
+}
+.xmSearch .submit { 
+	position:absolute; 
+	top:12rpx; 
+	left:40rpx; 
+	width:56rpx; 
+	height:56rpx; 
+	line-height: 56rpx; 
+	text-align: center; 
+	cursor:pointer; 
+	color: #4A4A4A;
+}
+
+/*搜索弹窗*/
+.searchPop {
+	z-index: 1001;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width:100%;
+	height: 100%;
+	background: #fff;
+}
+.searchPop input {
+	min-height: 36rpx;
+}
+.searchPop .xmSearch {
+	padding-left: 20rpx;
+}
+.searchPop .keyword {
+	width: 540rpx;
+	/*overflow: visible;*/
+}
+.searchPop .submit {
+	left: 30rpx;
+}
+.searchPop .cancel {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 84rpx;
+	height: 84rpx;
+	line-height: 84rpx;
+}
+.searchPop .sec {
+	margin-top: 30rpx;
+	padding: 0 40rpx;
+	font-size: 24rpx;
+}
+.searchPop .h3 {
+	height: 40rpx;
+	line-height: 40rpx;
+	color: #999;
+	font-size: 24rpx;
+	margin-bottom: 16rpx;
+}
+.searchPop .ul {
+	overflow: hidden;
+}
+.searchPop .ul .link {
+	display: block;
+	float: left;
+	padding: 0 20rpx;
+	background: #e5e5e5;
+	height: 48rpx;
+	line-height: 48rpx;
+	margin: 0 10rpx 10rpx 0;
+	border-radius: 6rpx;
+	color: #555;
+}
+
+
+/*没订单*/
+.xmEmpty {
+	padding-top: 140rpx;
+	line-height: 60rpx;
+	text-align: center;
+}
+.xmEmpty .i {
+	position: relative;
+	line-height: 200rpx;
+	margin-bottom: 60rpx;
+}
+.xmEmpty .p {
+	font-size: 32rpx;
+	color: #999;
+}
+.xmEmpty .link {
+	display: inline;
+	 color:  #44A0FF;
+	 font-size: 32rpx;
+}

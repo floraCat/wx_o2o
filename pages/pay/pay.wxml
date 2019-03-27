@@ -1,0 +1,80 @@
+<view class="xmContainer">
+	<view class="xmPay">
+
+		<!--头部-->
+		<view class="xmHead">
+			<navigator open-type="navigateBack" class="lt icon0 i-return">
+				<image src="/images/return.png"></image>
+			</navigator>
+			<view class="h2">{{pageTitle}}</view>
+			<view class="rt icon0 i-home" bindtap="goHome">
+				<image src="/images/home.png"></image>
+			</view>
+		</view>
+
+		<view class="content xmCols">
+
+		      <view class="restTime">
+		        <view class="em">￥{{sumPrice}}</view>
+		        <view class="p">
+		          <view class="span">支付剩余时间</view>
+		          <view class="mxTime">  
+		            <view>{{mTime}}</view>  
+		            <view>{{sTime}}</view>  
+		        </view> 
+		        </view>
+		         <view style="display:none;">{{info.shopName}} - {{info.shopMobile}}</view>
+		         <view style="display:none;">{{info.shopName}} - {{info.shopMobile}}</view>
+		      </view>
+
+		      <view class="paySel">
+		        <view class="li hd">
+		          <view class="i icon icon0 i-pay_way">
+		          	<image src="/images/pay_way.png"></image>
+		          </view>
+		          <view class="span">选择支付方式</view>
+		        </view>
+		        <view class="item">
+		          <view class="checkList">
+		            <view class="li item" wx:for="{{payModes}}" wx:key="index" data-opt="{{index}}" bindtap="checkPay">
+		              <view class="link">
+		                <view class="check {{item.check ? 'on' : ''}}">
+		                  <view class="i icon0 i-select" wx:if="{{!item.check}}">
+		                  	<image src="/images/select.png"></image>
+		                  </view>
+		                  <view class="i icon0 i-selected" wx:if="{{item.check}}">
+		                  	<image src="/images/selected.png"></image>
+		                  </view>
+		                </view>
+		                <view class="icon">
+		                  <view class="{{'icon0 i-' + item.code}}">
+		                  	<image src='/images/{{item.code}}.png'></image>
+		                  </view>
+		                </view>
+		                <view class="text">
+		                  <view class="span">{{ item.name }}</view>
+		                </view>
+		              </view>
+		            </view>
+		          </view>
+		        </view>
+		      </view>
+
+		      <view class="note">
+		        <view class="p">预计送达时间为 <view class="em">支付后20分钟</view></view>
+		        请留意您的登机时间。
+		      </view>
+
+		      <view class="footBanner">
+		        <view class="_wrap">
+		          <view class="_btn" bindtap="confirmPay">
+		            <view class="span">确认支付 ￥</view>
+		            <view class="em">{{sumPrice}}</view>
+		          </view>
+		        </view>
+		      </view>
+
+		</view>
+
+	</view>
+</view>

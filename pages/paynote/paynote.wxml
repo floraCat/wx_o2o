@@ -1,0 +1,29 @@
+<view class="xmContainer">
+	<view class="xmPay">
+
+		<!--头部-->
+		<view class="xmHead">
+			<navigator open-type="navigateBack" class="lt icon0 i-return">
+				<image src="/images/return.png"></image>
+			</navigator>
+			<view class="h2">{{pageTitle}}</view>
+			<view class="rt icon0 i-home" bindtap="goHome">
+				<image src="/images/home.png"></image>
+			</view>
+		</view>
+
+        <!--推送弹窗 start-->
+	    <view bindtap="goOrder" class="pushMask" wx:if="{{openPush}}"></view>
+	    <view bindtap="goOrder" class="pushQuit icon0 i-close" wx:if="{{openPush}}">
+	    	<image src="/images/close.png" />
+	    </view>
+	    <view class="pushMain" wx:if="{{openPush}}">
+	        <view class="h3">支付成功！</view>
+	        <view class="em0">￥{{sumPrice}}</view>
+	        <view class="span0">(商品配送过程中请勿离开座位)</view>
+	        <view bindtap="goOrder" data-opt="" class="btn">查看订单</view>
+	    </view>
+	    <!--推送弹窗 end-->
+
+	</view>
+</view>

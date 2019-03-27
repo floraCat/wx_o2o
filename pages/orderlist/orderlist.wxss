@@ -1,0 +1,52 @@
+@import "/style/common.wxss";
+@import "/style/order.wxss";
+
+.xmOrderList {
+	font-size: 24rpx;
+}
+.xmOrderList .tabs {
+	display: flex;
+	height: 100rpx;
+	text-align: center;
+	background: #fff;
+	border-bottom: #E1E1E1 2rpx solid;
+}
+.xmOrderList .tabs .li {
+	flex: 1;
+	font-size: 32rpx;
+	color: #C7C7CD;
+}
+.xmOrderList .tabs .li.active .p {
+	color: #44A0FF;
+}
+.xmOrderList .tabs .p {
+	width: 108rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	margin: 0 auto;
+}
+.xmOrderList .xmOrderList .item {
+	border-top: #E1E1E1 2rpx solid;
+	margin-bottom: 16rpx;
+}
+.xmOrderList .xmOrderList .item:first-child {
+	border-top: none;
+}
+
+.noContent {
+	padding-top: 200rpx;
+	color: #aaa;
+	text-align: center;
+}
+.noContent .p {
+	font-size:32rpx;
+}
+
+.endNote {
+	height: 100rpx;
+	line-height: 100rpx;
+	text-align: center;
+	color: #999;
+	font-size: 24rpx;
+}
+
